@@ -27,10 +27,14 @@ function bestRockSong(response) {
 }
 
 async function doTheJob() {
-    const bestRockBandResponse = await bestRockBand("Queen");
-    console.log(bestRockBandResponse);
-    const bestRockSongResponse = await bestRockSong(bestRockBandResponse);
-    console.log(bestRockSongResponse);
+    try {
+        const bestRockBandResponse = await bestRockBand("Queen");
+        console.log(bestRockBandResponse);
+        const bestRockSongResponse = await bestRockSong(bestRockBandResponse);
+        console.log(bestRockSongResponse);
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 doTheJob();
